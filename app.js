@@ -1,5 +1,14 @@
 'use strict';
 
+(() => {
+  if (document.body.dataset.page !== 'home') return;
+  const redirects = {features:'demo.html',screens:'demo.html',technology:'technology.html',engineering:'technology.html',reliability:'development.html',validation:'development.html',team:'team.html'};
+  const target = redirects[location.hash.slice(1)];
+  if (target) location.replace(target + location.search + location.hash);
+})();
+
+
+
 const screens = {
   analysis: { file: '10_report_result.png', label: '목소리 분석 리포트 개발 화면', eyebrow: 'VOICE ANALYSIS', title: '내 목소리를<br>눈으로 이해하기.', description: '전체 음역, 편안한 음역과 음역별 안정성을 리포트로 확인하는 화면입니다.' },
   recommend: { file: '03_recommend.png', label: 'LP 레코드 형태의 추천곡 개발 화면', eyebrow: 'PERSONALIZED DISCOVERY', title: '다음 애창곡을<br>발견하는 즐거움.', description: 'LP 레코드 형태로 노래를 탐색하는 추천 화면입니다. 마음에 드는 곡에서 나와의 적합도 확인으로 이어집니다.' },
@@ -26,6 +35,7 @@ document.addEventListener('keydown', event => { if (event.key === 'Escape') clos
 document.addEventListener('click', event => { if (!event.target.closest('.header')) closeMenu(); });
 window.matchMedia('(min-width: 801px)').addEventListener('change', event => { if (event.matches) closeMenu(); });
 
+if (document.querySelector('#explorer-image')) {
 let selectedScreen = 'analysis';
 const tabs = [...document.querySelectorAll('[data-screen]')];
 const explorerImage = document.querySelector('#explorer-image');
@@ -78,6 +88,8 @@ dialog.addEventListener('click', event => {
 });
 dialog.addEventListener('close', () => document.body.classList.remove('dialog-open'));
 
+}
+
 if ('IntersectionObserver' in window) {
   const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   if (!reducedMotion) {
@@ -87,13 +99,4 @@ if ('IntersectionObserver' in window) {
     }), { threshold: 0.08 });
     document.querySelectorAll('.reveal').forEach(element => revealObserver.observe(element));
   }
-  const sectionObserver = new IntersectionObserver(entries => entries.forEach(entry => {
-    if (entry.isIntersecting) navigation.querySelectorAll('a').forEach(link => {
-      const active = link.hash === `#${entry.target.id}`;
-      link.classList.toggle('active', active);
-      if (active) link.setAttribute('aria-current', 'location');
-      else link.removeAttribute('aria-current');
-    });
-  }), { rootMargin: '-15% 0px -60% 0px' });
-  navigation.querySelectorAll('a').forEach(link => { const section = document.querySelector(link.hash); if (section) sectionObserver.observe(section); });
 }

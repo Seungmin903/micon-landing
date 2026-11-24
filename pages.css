@@ -1,0 +1,42 @@
+.header #navigation a[aria-current="page"] { color: var(--purple); font-weight: 700; }
+.footer-links a[aria-current="page"] { color: var(--purple); }
+.page-intro { padding-block: 75px 65px; }
+.page-intro .eyebrow { margin-bottom: 20px; }
+.page-intro h1 { font-size: clamp(36px,4vw,56px); line-height: 1.35; margin-bottom: 24px; letter-spacing: -.055em; }
+.page-intro > p:not(.eyebrow) { font-size: 16px; line-height: 1.95; color: #8b8298; max-width: 740px; margin-bottom: 0; }
+.inner-page .features { padding-top: 0; }
+.inner-page .service-motion { margin-top: 0; }
+.inner-page .story-layout { margin-top: 25px; }
+.inner-page .portfolio-architecture { padding-top: 70px; }
+.home-page .hero-stage { height: 360px; }
+.home-page .hero { padding-top: 65px; }
+.home-page .why { padding-bottom: 30px; }
+.overview-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 22px; margin-top: 35px; }
+.overview-grid > a { display: flex; flex-direction: column; border: 1px solid #eae4f2; border-radius: 16px; padding: 32px; background: #fbfafd; transition: transform .2s, border-color .2s, background .2s; }
+.overview-grid > a:hover { transform: translateY(-3px); background: #f5f1fd; border-color: #cfc0ec; }
+.overview-grid > a > span { font-size: 11px; font-weight: 650; color: #ac96c5; letter-spacing: .1em; }
+.overview-grid h3 { font-size: 25px; margin: 19px 0 14px; }
+.overview-grid p { font-size: 16px; color: #9689a2; line-height: 1.9; margin-bottom: 28px; }
+.overview-grid strong { margin-top: auto; font-size: 14px; color: #8167af; font-weight: 600; }
+.next-page { display: flex; justify-content: space-between; align-items: center; gap: 30px; padding-block: 38px; margin-top: 30px; border-top: 1px solid #eae5f1; border-bottom: 1px solid #eae5f1; }
+.next-page > span { font-size: 12px; color: #a291b0; }
+.next-page a { font-size: 21px; font-weight: 650; color: #7d61ad; letter-spacing: -.035em; }
+.next-page a > span { margin-left: 25px; font-size: 18px; }
+.inner-page .footer { margin-top: 20px; }
+.team-context { color: #9885aa; font-size: 14px; }
+.inner-page .team-roster { margin-top: 35px; }
+@media(max-width:800px) { .page-intro { padding-block: 55px 45px; } .page-intro h1 { font-size: 40px; } }
+@media(max-width:600px) {
+  .page-intro { padding-block: 45px 35px; }
+  .page-intro h1 { font-size: 31px; }
+  .page-intro > p:not(.eyebrow) { font-size: 16px; }
+  .home-page .hero { padding-top: 45px; }
+  .home-page .hero-stage { height: 300px; }
+  .overview-grid { grid-template-columns: 1fr; gap: 16px; }
+  .overview-grid > a { padding: 26px; }
+  .overview-grid h3 { font-size: 23px; }
+  .next-page { padding-block: 28px; gap: 18px; }
+  .next-page a { font-size: 19px; }
+  .next-page a > span { margin-left: 12px; }
+  .inner-page .portfolio-architecture { padding-top: 50px; }
+}
