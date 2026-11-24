@@ -1,6 +1,6 @@
 # MICON landing
 
-MICON Android 앱을 소개하는 한국어 반응형 랜딩페이지입니다. 별도의 빌드와 패키지 설치 없이 동작하는 HTML, CSS, JavaScript로 구성했습니다.
+MICON Android 앱의 실제 시연과 구현 과정을 소개하는 한국어 기술 포트폴리오입니다. 문제 정의, 시스템 구조, 알고리즘 선택, 상태 관리, 검증 근거와 팀 역할을 함께 담았습니다. 별도의 빌드와 패키지 설치 없이 동작하는 HTML, CSS, JavaScript로 구성했습니다.
 
 ## 로컬 실행
 
@@ -46,6 +46,22 @@ python -m http.server 4174 --bind 127.0.0.1
 | 실시간 연습 | 18번, `ppt/media/image40.gif` | `assets/motion/live-practice.mp4` |
 
 세 영상은 합계 약 720KB이며 소리가 없습니다. 포스터는 각 영상의 첫 프레임입니다. `motion.css`와 `motion.js`가 스크롤에 따른 장면 전환과 재생을 관리합니다. 화면에 보이는 활성 영상만 재생하고, 화면 밖으로 나가거나 브라우저 탭이 숨겨지면 멈춥니다. 모바일에서는 버튼으로 장면을 선택합니다. 사용자가 일시정지하거나 OS의 동작 줄이기를 켜면 자동 재생을 멈추고 정지 화면을 표시합니다. 전환은 동일한 프레임 안에서 화면 페이드와 크기·기울기·모서리·배경 형태의 변화로 구현했습니다.
+
+## 기술 포트폴리오의 근거
+
+`portfolio.css`와 `portfolio.js`가 아키텍처 흐름 선택과 추천 키 설명 예시를 구현합니다.
+
+- 음색 모델 계약: `ai/recommend-server/timbre_recommender/contracts.py` (ECAPA 192차원, Singer-BYOL 1,000차원)
+- 구간 추출: `embedding.py` (4초 창, 2초 hop)
+- 추천 키: `pitch_range.py` (`vocal-range-keyshift-first-98-v3`, 가이드 프로필과 관찰 프로필 구분)
+- 실시간 음정: `scoring/YinPitch.kt`, `LiveScorer.kt` (기기 내 계산, hop과 실측 지연을 구분)
+- 음역 제출: `data/onboarding/BackendRangeAnalysisGateway.kt` (WAV·메타데이터 제출 후 서버 결과 조회)
+- 비동기 일관성: `docs/profile-recommendation-refresh.md`, `RecommendationAfterCommitIntegrationTest.java`
+- 운영 전환 수치: `docs/KEY_VARIANT_ROLLOUT.md`, 2026-09-21 기록. 881곡, 원키 포함 7키, 변경 키 5,286행. 현재 사용자 수·정확도·실측 처리속도가 아님
+- 키 비교 그래프: 본선 발표 37–40번 슬라이드의 원키 71%, −1키 87%, −2키 93%, −3키 100% 설명 예시. 실제 음원 그래프·실시간 계산·서비스 정확도 지표로 표현하지 않음
+- 팀 이름과 역할: 본선 발표 42번 슬라이드 원문. 특정 팀원에게 세부 구현 기여를 임의 배정하지 않음
+
+발표 자료와 코드 문서의 음색 결합 가중치 설명에 버전 차이가 있어, 사이트에서는 가중치를 임의로 단일 수치로 확정하지 않았습니다. 테스트 섹션은 저장소 테스트 사례를 소개하며 앱 전체 테스트의 최신 실행 성공을 주장하지 않습니다.
 
 ## 디자인 참고
 
