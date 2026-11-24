@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#6c5ce7">
+  <title>MICON — 내 목소리에 맞는 노래의 시작</title>
+  <meta name="description" content="내 음역과 음색을 알아보고, 나에게 맞는 노래와 키를 찾아 연습하세요. 음성 분석부터 맞춤곡 추천, 실시간 음정 피드백까지 MICON.">
+  <meta property="og:title" content="MICON — 좋아하는 노래를, 나다운 목소리로.">
+  <meta property="og:description" content="음역·음색 분석, 맞춤곡과 추천 키, 실시간 음정 연습을 하나로.">
+  <meta property="og:type" content="website">
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="styles.css">
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">본문으로 건너뛰기</a>
+  <header class="header">
+    <div class="nav-wrap">
+      <a class="logo" href="#top" aria-label="MICON 홈"><img src="assets/logo.png" alt="MICON" width="138" height="44"></a>
+      <nav id="navigation" aria-label="주 메뉴">
+        <a href="#why">MICON 이야기</a><a href="#features">핵심 기능</a><a href="#screens">앱 둘러보기</a><a href="#technology">기술</a>
+      </nav>
+      <a class="button nav-cta" href="#screens">MICON 만나보기</a>
+      <button class="menu-button" aria-expanded="false" aria-controls="navigation" aria-label="메뉴 열기"><span></span><span></span></button>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="hero" id="top">
+      <div class="hero-glow" aria-hidden="true"></div>
+      <div class="hero-copy container">
+        <p class="eyebrow"><span class="mini-wave" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></span> YOUR VOICE. YOUR MUSIC.</p>
+        <h1>좋아하는 노래를,<br><span>나다운 목소리로.</span></h1>
+        <p class="hero-description">내 목소리를 알면, 노래가 더 즐거워지니까.<br>음역과 음색 분석부터 맞춤곡 추천, 연습까지 MICON과 함께하세요.</p>
+        <div class="hero-actions"><a class="button primary" href="#screens">내 목소리의 가능성 만나보기</a><a class="button secondary" href="#features">핵심 기능 살펴보기</a></div>
+        <p class="hero-footnote">목소리를 이해하는 나만의 뮤직 파트너</p>
+      </div>
+      <div class="hero-stage container">
+        <div class="stage-grid" aria-hidden="true"></div>
+        <div class="orbit orbit-one" aria-hidden="true"></div><div class="orbit orbit-two" aria-hidden="true"></div>
+        <div class="stage-caption"><span class="eyebrow">FIND YOUR OWN SOUND</span><p>당신의 다음 애창곡,<br>목소리 안에 있어요.</p></div>
+        <div class="hero-device device-left"><img src="assets/screens/10_report_result.png" alt="MICON Android 개발 화면: 음역대 지도와 음역별 안정성 리포트" width="1440" height="3120" fetchpriority="high"></div>
+        <div class="hero-device device-center"><img src="assets/screens/03_recommend.png" alt="MICON Android 개발 화면: LP 레코드 형태의 추천곡" width="1440" height="3120" fetchpriority="high"></div>
+        <div class="hero-device device-right"><img src="assets/screens/14_practice.png" alt="MICON Android 개발 화면: 노래 연습과 키 조절" width="1440" height="3120"></div>
+        <div class="stage-note"><span class="note-symbol" aria-hidden="true">♪</span><span>나에게 맞는 곡으로<br><strong>한 곡 더, 자신 있게.</strong></span></div>
+      </div>
+      <p class="screen-disclaimer">실제 Android 앱의 개발 단계 캡처입니다. 화면 속 분석 수치와 곡은 예시이며, 현재 버전과 다를 수 있습니다.</p>
+    </section>
+
+    <div class="capability-strip container" aria-label="MICON 핵심 경험"><span>목소리를 <strong>이해하고</strong></span><span class="strip-wave" aria-hidden="true">∿</span><span>맞는 노래를 <strong>발견하고</strong></span><span class="strip-wave" aria-hidden="true">∿</span><span>부를수록 <strong>성장하는</strong></span></div>
+
+    <section class="why section container" id="why">
+      <div class="section-heading reveal"><p class="eyebrow">WHY MICON</p><h2>노래를 못하는 걸까요?<br><span class="muted">아직 내 노래를 못 찾은 걸까요?</span></h2><p>좋아하는 노래와 편하게 부를 수 있는 노래는 다를 수 있어요.<br>MICON은 그 사이에서, 내 목소리에 맞는 시작점을 찾아줍니다.</p></div>
+      <div class="comparison reveal">
+        <div class="comparison-before"><span class="small-label">익숙했던 노래방의 순간</span><p>“이 노래, 키가 너무 높은데…”</p><p>“한 키만 더 내려볼까?”</p><p>“결국 또 부르던 노래네.”</p><div class="tangled-line" aria-hidden="true">∿ ∿ ∿</div></div>
+        <div class="comparison-after"><span class="small-label">MICON과 함께라면</span><h3>막연한 선곡 대신,<br>내 목소리라는 기준.</h3><ul class="check-list"><li>편안하게 부를 수 있는 음역을 알고</li><li>음역과 음색에 맞는 노래를 찾고</li><li>나에게 맞는 키에서 연습을 시작해요</li></ul></div>
+      </div>
+    </section>
+
+    <section class="features section" id="features">
+      <div class="container">
+        <div class="section-heading centered reveal"><p class="eyebrow">ONE VOICE, THREE POSSIBILITIES</p><h2>나를 아는 것부터,<br>내 노래가 되는 순간까지.</h2><p>분석, 추천, 연습. 흩어져 있던 노래의 경험을 하나로.</p></div>
+        <article class="feature-row reveal">
+          <div class="feature-copy"><span class="feature-icon" aria-hidden="true">∿</span><p class="eyebrow">VOICE ANALYSIS</p><h3>내 목소리에도<br><span>지도가 있어요.</span></h3><p>낼 수 있는 음과 편안하게 부르는 음은 다르니까.<br>전체 음역과 안정 음역을 구분해, 내 목소리의 범위를 한눈에 확인하세요.</p><ul class="feature-list"><li>전체 음역과 안정 음역 시각화</li><li>음역별 특성을 담은 분석 리포트</li><li>목소리를 이해하는 음색 분석</li></ul><button class="text-button" data-open-screen="analysis">분석 화면 자세히 보기 <span aria-hidden="true">＋</span></button></div>
+          <div class="feature-visual analysis-visual"><span class="visual-label">내 목소리를 읽는 시간</span><div class="feature-phone"><img src="assets/screens/10_report_result.png" alt="실제 앱 개발 캡처: 전체 음역, 편안한 음역, 추천곡 음역을 비교하는 리포트" width="1440" height="3120" loading="lazy"></div><div class="visual-sticker"><span aria-hidden="true">♫</span> 가능 음역보다<br><strong>편안한 음역에 집중.</strong></div></div>
+        </article>
+        <article class="feature-row reverse reveal">
+          <div class="feature-copy"><span class="feature-icon pink-icon" aria-hidden="true">♫</span><p class="eyebrow">PERSONALIZED DISCOVERY</p><h3>취향에 맞고,<br><span>목소리에도 맞게.</span></h3><p>인기 차트에서 무작정 고르지 않아도 괜찮아요.<br>내 음역과 음색에 맞는 곡, 그리고 부르기 좋은 키를 함께 찾아보세요.</p><ul class="feature-list"><li>음역·음색을 바탕으로 한 맞춤곡 추천</li><li>내 음역과 곡 음역의 적합도 확인</li><li>무리 없이 시작할 수 있는 추천 키</li></ul><button class="text-button" data-open-screen="match">추천 화면 자세히 보기 <span aria-hidden="true">＋</span></button></div>
+          <div class="feature-visual discovery-visual"><span class="visual-label">새로운 애창곡을 발견하는 시간</span><div class="record-decor" aria-hidden="true"><div></div></div><div class="feature-phone"><img src="assets/screens/17_song_match.png" alt="실제 앱 개발 캡처: 곡 음역 매칭 분석과 권장 키 조절" width="1440" height="3120" loading="lazy"></div><span class="record-word" aria-hidden="true">YOUR<br>NEXT<br>FAVORITE.</span></div>
+        </article>
+        <article class="feature-row reveal">
+          <div class="feature-copy"><span class="feature-icon mint-icon" aria-hidden="true">♩</span><p class="eyebrow">PRACTICE & GROW</p><h3>한 번 더 부를 이유,<br><span>달라지는 나의 노래.</span></h3><p>감으로만 연습하지 않도록.<br>목표 음정과 내 음정을 실시간으로 비교하고, 연습 기록을 돌아보며 다음 한 곡을 준비하세요.</p><ul class="feature-list"><li>실시간 음정 비교와 피드백</li><li>키 조절과 가사 싱크로 편안한 연습</li><li>연습 결과와 기록 다시 보기</li></ul><button class="text-button" data-open-screen="practice">연습 화면 자세히 보기 <span aria-hidden="true">＋</span></button></div>
+          <div class="feature-visual practice-visual"><span class="visual-label">어제보다 내 노래에 가까워지는 시간</span><div class="pitch-decor" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div><div class="feature-phone"><img src="assets/screens/14_practice.png" alt="실제 앱 개발 캡처: 키 조절, 가사, 마이크 제어가 있는 노래 연습 화면" width="1440" height="3120" loading="lazy"></div></div>
+        </article>
+      </div>
+    </section>
+
+    <section class="screen-section section" id="screens">
+      <div class="container">
+        <div class="section-heading centered reveal"><p class="eyebrow">A CLOSER LOOK</p><h2>당신의 손안에서,<br>MICON은 이렇게.</h2><p>앱의 실제 개발 화면을 한 장씩 살펴보세요.</p></div>
+        <div class="screen-explorer reveal">
+          <div class="screen-tabs" role="tablist" aria-label="앱 화면 선택" aria-orientation="vertical">
+            <button role="tab" id="tab-analysis" aria-selected="true" aria-controls="screen-panel" tabindex="0" data-screen="analysis"><span class="tab-symbol" aria-hidden="true">∿</span><span><strong>목소리 분석</strong><small>나만의 음역대 지도</small></span><span class="tab-indicator" aria-hidden="true">＋</span></button>
+            <button role="tab" id="tab-recommend" aria-selected="false" aria-controls="screen-panel" tabindex="-1" data-screen="recommend"><span class="tab-symbol" aria-hidden="true">♫</span><span><strong>맞춤곡 추천</strong><small>목소리에 맞는 새로운 발견</small></span><span class="tab-indicator" aria-hidden="true">＋</span></button>
+            <button role="tab" id="tab-match" aria-selected="false" aria-controls="screen-panel" tabindex="-1" data-screen="match"><span class="tab-symbol" aria-hidden="true">♯</span><span><strong>곡 적합도와 키</strong><small>부르기 전에 확인하는 나와의 거리</small></span><span class="tab-indicator" aria-hidden="true">＋</span></button>
+            <button role="tab" id="tab-practice" aria-selected="false" aria-controls="screen-panel" tabindex="-1" data-screen="practice"><span class="tab-symbol" aria-hidden="true">♩</span><span><strong>노래 연습</strong><small>내 목소리로 완성하는 한 곡</small></span><span class="tab-indicator" aria-hidden="true">＋</span></button>
+            <button role="tab" id="tab-favorites" aria-selected="false" aria-controls="screen-panel" tabindex="-1" data-screen="favorites"><span class="tab-symbol" aria-hidden="true">♡</span><span><strong>찜과 세트리스트</strong><small>부르고 싶은 노래를 한곳에</small></span><span class="tab-indicator" aria-hidden="true">＋</span></button>
+          </div>
+          <div class="screen-panel" id="screen-panel" role="tabpanel" aria-labelledby="tab-analysis" tabindex="0">
+            <div class="explorer-phone"><img id="explorer-image" src="assets/screens/10_report_result.png" alt="목소리 분석 리포트 개발 화면" width="1440" height="3120" loading="lazy"></div>
+            <button class="zoom-button" id="zoom-screen" aria-label="선택한 앱 화면 크게 보기">화면 크게 보기 <span aria-hidden="true">＋</span></button>
+          </div>
+          <div class="screen-description" aria-live="polite"><span class="small-label">VOICE ANALYSIS</span><h3>내 목소리를<br>눈으로 이해하기.</h3><p>전체 음역, 편안한 음역과 음역별 안정성을 리포트로 확인하는 화면입니다.</p><span class="capture-note">Android 앱 개발 캡처<br>예시 데이터 · 현재 버전과 다를 수 있음</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="journey section container">
+      <div class="section-heading reveal"><p class="eyebrow">MAKE IT YOURS</p><h2>노래 한 곡이<br>내 것이 되는 과정.</h2></div>
+      <div class="journey-steps reveal"><article><span class="step-symbol" aria-hidden="true">∿</span><h3>가볍게 목소리를 들려주세요</h3><p>안내에 따라 음역을 측정하고<br>노래로 내 목소리의 특징을 알아봐요.</p></article><article><span class="step-symbol" aria-hidden="true">♫</span><h3>나에게 맞는 곡을 골라요</h3><p>추천곡과 적합도를 살펴보고<br>편안하게 부를 키를 확인해요.</p></article><article><span class="step-symbol" aria-hidden="true">♩</span><h3>부르고, 확인하고, 다시 불러요</h3><p>실시간 피드백으로 연습하고<br>기록을 보며 달라진 나를 만나요.</p></article></div>
+    </section>
+
+    <section class="technology section" id="technology"><div class="container tech-layout"><div class="reveal"><p class="eyebrow">BEHIND YOUR VOICE</p><h2>목소리를 이해하는 기술,<br><span>노래에 집중하는 경험.</span></h2><p>음역을 측정하고, 음색의 특징을 비교하고,<br>부르는 순간의 음정을 읽습니다.<br>복잡한 분석은 MICON에 맡기고 노래에 집중하세요.</p><a class="text-button" href="https://github.com/Seungmin903/MICON" target="_blank" rel="noopener noreferrer">MICON 프로젝트 살펴보기 <span aria-hidden="true">＋</span></a></div><div class="tech-stack reveal"><article><span>VOICE</span><h3>음역과 음색, 함께 이해하기</h3><p>낼 수 있는 음의 범위와 목소리의 특징을 서로 다른 관점에서 분석합니다.</p></article><article><span>MATCH</span><h3>내 목소리와 곡을 연결하기</h3><p>사용자의 음역과 곡의 음역을 비교해 적합도와 추천 키를 제안합니다.</p></article><article><span>FEEDBACK</span><h3>부르는 순간을 피드백으로</h3><p>기기에서 음정을 추출하고 목표 음정과 비교해 실시간 연습을 돕습니다.</p></article></div></div></section>
+
+    <section class="faq section container"><div class="section-heading reveal"><p class="eyebrow">GOOD TO KNOW</p><h2>궁금한 이야기.</h2></div><div class="faq-list reveal"><details><summary>노래를 잘 못해도 사용할 수 있나요?<span aria-hidden="true">＋</span></summary><p>내 목소리에 맞는 곡과 키를 찾는 것부터 시작할 수 있어요. MICON은 현재의 음역을 이해하고, 목표 음정과 내 음정을 비교하며 연습할 수 있도록 돕는 서비스입니다.</p></details><details><summary>좋아하는 노래와 추천곡은 어떻게 다른가요?<span aria-hidden="true">＋</span></summary><p>취향은 듣고 싶은 노래의 기준이고, MICON의 맞춤 추천은 내 음역과 음색도 함께 고려합니다. 좋아하던 곡의 적합도를 확인하거나, 내 목소리와 어울리는 다른 곡을 발견할 수 있어요.</p></details><details><summary>웹사이트에서 바로 음성을 분석할 수 있나요?<span aria-hidden="true">＋</span></summary><p>이 페이지는 MICON을 소개하는 랜딩페이지입니다. 음성 측정·분석과 실시간 노래 연습은 Android 앱에서 제공하는 기능입니다. 이 웹페이지에서는 마이크를 사용하거나 음성을 수집하지 않습니다.</p></details><details><summary>지금 보이는 화면은 실제 앱인가요?<span aria-hidden="true">＋</span></summary><p>네. MICON Android 저장소에 포함된 실제 개발 단계 캡처입니다. 소개를 위해 새로 그린 제품 목업이 아닙니다. 캡처는 과거 개발 버전이며 화면 속 곡과 분석값은 예시이므로, 현재 앱의 구성 및 결과와 다를 수 있습니다.</p></details></div></section>
+
+    <section class="closing"><div class="closing-wave" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div><div class="container reveal"><p class="eyebrow">YOUR MIC IS ON.</p><h2>다음 한 곡은,<br>조금 더 나답게.</h2><p>내 목소리에 맞는 노래의 시작, MICON.</p><a class="button primary" href="#screens">MICON 다시 둘러보기</a></div></section>
+  </main>
+  <footer class="footer container"><div><a class="logo" href="#top" aria-label="MICON 홈"><img src="assets/logo.png" alt="MICON" width="138" height="44" loading="lazy"></a><p>내 목소리에 맞는 노래의 시작.</p></div><div class="footer-links"><a href="#why">MICON 이야기</a><a href="#features">핵심 기능</a><a href="#screens">앱 둘러보기</a><a href="https://github.com/Seungmin903/MICON" target="_blank" rel="noopener noreferrer">GitHub</a></div><div class="footer-bottom"><span>© 2026 MICON.</span><span>Made for your voice.</span></div></footer>
+  <dialog id="screen-dialog" aria-labelledby="dialog-title"><div class="dialog-bar"><h2 id="dialog-title">앱 화면 자세히 보기</h2><button id="close-dialog" aria-label="화면 닫기">닫기 ×</button></div><div class="dialog-content"><img id="dialog-image" src="assets/screens/10_report_result.png" alt="목소리 분석 개발 화면 확대" width="1440" height="3120"></div><p>실제 Android 앱 개발 캡처 · 예시 데이터 · 현재 버전과 다를 수 있습니다.</p></dialog>
+</body>
+</html>
