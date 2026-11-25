@@ -1,4 +1,4 @@
-/* Current Android UI illustrations, with scroll-linked scene transitions. */
+/* Original presentation recordings, with scroll-linked scene transitions. */
 (() => {
   const story = document.querySelector('.service-motion');
   if (!story) return;
@@ -19,21 +19,33 @@
   let current = 'analysis';
   let paused = reducedMotion.matches;
   let inView = false;
+  let playAttempt = 0;
+  let playbackBlocked = false;
   let queued = false;
   story.classList.add('motion-enhanced');
 
-  function updateControls() {
-    toggle.setAttribute('aria-pressed', String(paused));
-    toggle.textContent = paused ? '시연 재생' : '시연 일시정지';
-    status.textContent = paused ? '멈춘 화면 · 코드 기반 재현' : '현재 코드 기반 UI · 예시 데이터';
+  function updateControls(blocked = false) {
+    playbackBlocked = blocked;
+    toggle.setAttribute('aria-pressed', String(paused || blocked));
+    toggle.textContent = paused || blocked ? '시연 재생' : '시연 일시정지';
+    status.textContent = paused ? '멈춘 화면으로 살펴보는 중' : blocked ? '재생을 눌러 시연을 확인하세요' : '실제 앱 시연 · 소리 없음';
   }
 
   function syncPlayback() {
+    const attempt = ++playAttempt;
     scenes.forEach(scene => {
-      const image = scene.querySelector('img');
+      const video = scene.querySelector('video');
       const shouldPlay = scene.dataset.motionScene === current && inView && !paused && !document.hidden;
-      const next = shouldPlay ? image.dataset.animated : image.dataset.still;
-      if (image.getAttribute('src') !== next) image.src = next;
+      if (!shouldPlay) { video.pause(); return; }
+      const source = video.querySelector('source');
+      if (!source.hasAttribute('src')) {
+        source.src = source.dataset.src;
+        video.load();
+      }
+      video.muted = true;
+      video.play().catch(() => {
+        if (attempt === playAttempt && inView && !paused && !document.hidden) updateControls(true);
+      });
     });
     updateControls();
   }
@@ -88,7 +100,7 @@
       story.querySelector(`#story-${key}`).scrollIntoView({ block: 'center', behavior: 'instant' });
     }
   }));
-  toggle.addEventListener('click', () => { paused = !paused; syncPlayback(); });
+  toggle.addEventListener('click', () => { paused = playbackBlocked ? false : !paused; syncPlayback(); });
   window.addEventListener('scroll', () => {
     if (!queued) { queued = true; requestAnimationFrame(sceneFromScroll); }
   }, { passive: true });

@@ -10,11 +10,11 @@
 
 
 const screens = {
-  analysis: { file: 'analysis-current.svg', label: '목소리 분석 리포트 · 현재 코드 기반 재현', eyebrow: 'VOICE ANALYSIS', title: '내 목소리를<br>눈으로 이해하기.', description: '나와 닮은 가수와 목소리 유사도 그래프, 측정한 음역을 확인합니다. 아래로 이어지는 리포트에서는 음역대 지도와 음역별 발성 유지 점수를 살펴볼 수 있습니다.' },
+  analysis: { file: '10_report_result.png', label: '목소리 분석 리포트 개발 화면', eyebrow: 'VOICE ANALYSIS', title: '내 목소리를<br>눈으로 이해하기.', description: '전체 음역, 편안한 음역과 음역별 안정성을 리포트로 확인하는 화면입니다.' },
   recommend: { file: 'recommend-deck.svg', label: 'CD 플레이어 추천 화면 · Android 코드 기반 재현', eyebrow: 'PERSONALIZED DISCOVERY', title: '다음 애창곡을<br>발견하는 즐거움.', description: '내 음색에 딱, 내 음역대, 좋아하는 가수, 새로운 발견에서 곡을 고릅니다. 곡 카드를 위로 끌어 CD 플레이어에 올려 미리 듣고, 곡 상세로 이어집니다. 현재 Android UI 코드를 바탕으로 재현했으며 곡은 예시입니다.' },
-  match: { file: 'match-current.svg', label: '곡 상세와 키 조절 · 현재 코드 기반 재현', eyebrow: 'FIND YOUR KEY', title: '부르기 전에,<br>나에게 맞는 키부터.', description: 'CD 형태의 곡 정보 아래에서 음역 매치, 키 조절, 어려운 구간을 확인합니다. 선택한 키로 바로 연습을 시작할 수 있습니다.' },
-  practice: { file: 'practice-current.svg', label: '실시간 음정과 가사 연습 · 현재 코드 기반 재현', eyebrow: 'PRACTICE & GROW', title: '좋아하는 노래를<br>나의 노래로.', description: '목표 음표와 내 음정 궤적, 실시간 판정과 점수를 함께 확인합니다. 키 조절, 간주 건너뛰기, 가사 싱크와 일시정지로 연습 흐름을 이어갑니다.' },
-  favorites: { file: 'favorites-current.svg', label: '찜과 세트리스트 · 현재 코드 기반 재현', eyebrow: 'YOUR OWN SETLIST', title: '부르고 싶은 노래,<br>잊지 않도록.', description: '마음에 드는 곡을 찜하고 나만의 세트리스트로 모으는 화면입니다. 다음에 부를 노래를 미리 준비하세요.' },
+  match: { file: '17_song_match.png', label: '곡 음역 매칭 분석과 추천 키 개발 화면', eyebrow: 'FIND YOUR KEY', title: '부르기 전에,<br>나에게 맞는 키부터.', description: '내 음역과 곡의 음역을 비교하고, 권장 키와 부담이 될 수 있는 구간을 살펴보는 화면입니다.' },
+  practice: { file: '14_practice.png', label: '키 조절과 가사가 표시된 노래 연습 개발 화면', eyebrow: 'PRACTICE & GROW', title: '좋아하는 노래를<br>나의 노래로.', description: '곡의 키를 조절하고 가사에 맞춰 연습하는 화면입니다. 현재 앱 코드는 목표 음정과 실시간 음정 비교도 지원합니다.' },
+  favorites: { file: '09_favorites.png', label: '찜 목록과 세트리스트 개발 화면', eyebrow: 'YOUR OWN SETLIST', title: '부르고 싶은 노래,<br>잊지 않도록.', description: '마음에 드는 곡을 찜하고 나만의 세트리스트로 모으는 화면입니다. 다음에 부를 노래를 미리 준비하세요.' },
 };
 
 const menuButton = document.querySelector('.menu-button');
@@ -57,7 +57,7 @@ function selectScreen(key, focus = false) {
   description.querySelector('.small-label').textContent = screen.eyebrow;
   description.querySelector('h3').innerHTML = screen.title;
   description.querySelector('p').textContent = screen.description;
-  description.querySelector('.capture-note').textContent = '현재 Android 코드 기반 UI 재현 · 예시 데이터';
+  description.querySelector('.capture-note').textContent = key === 'recommend' ? '현재 Android 코드 기반 UI 재현 · 예시 곡' : 'Android 앱 개발 캡처 · 예시 데이터 · 현재 버전과 다를 수 있음';
 }
 tabs.forEach((tab, index) => {
   tab.addEventListener('click', () => selectScreen(tab.dataset.screen));
@@ -77,7 +77,7 @@ function openScreen(key) {
   dialogImage.src = `assets/screens/${screens[key].file}`;
   dialogImage.alt = `${screens[key].label} 확대`;
   document.querySelector('#dialog-title').textContent = screens[key].label;
-  dialog.querySelector(':scope > p').textContent = '현재 Android 코드 기반 UI 재현 · 예시 데이터';
+  dialog.querySelector(':scope > p').textContent = key === 'recommend' ? '현재 Android 코드 기반 UI 재현 · 예시 곡' : '실제 Android 앱 개발 캡처 · 예시 데이터 · 현재 버전과 다를 수 있습니다.';
   dialog.showModal();
   document.body.classList.add('dialog-open');
 }

@@ -15,7 +15,7 @@
 .morph-phone { position: relative; height: min(510px, calc(100svh - 245px)); max-height: 79%; min-height: 320px; aspect-ratio: 1080 / 2244; background: #fff; border: 7px solid #fff; border-radius: 27px; overflow: hidden; transform: rotate(-3deg); box-shadow: 0 22px 60px #3c24652b, 0 0 0 1px #ffffff80; z-index: 2; transition: transform 1s cubic-bezier(.2,.65,.2,1), border-radius 1s, box-shadow 1s; }
 .motion-scene { position: absolute; inset: 0; opacity: 0; visibility: hidden; transform: scale(1.07); filter: blur(5px); transition: opacity .6s, transform .85s cubic-bezier(.2,.65,.2,1), filter .6s, visibility .6s; pointer-events: none; }
 .motion-scene.is-active { opacity: 1; visibility: visible; transform: scale(1); filter: blur(0); }
-.motion-scene img { display: block; width: 100%; height: 100%; object-fit: contain; background: #f7f5fc; }
+.motion-scene video { display: block; width: 100%; height: 100%; object-fit: contain; background: #faf9ff; }
 .story-callout { position: absolute; z-index: 4; bottom: 75px; right: 18px; display: flex; align-items: center; gap: 12px; background: #ffffffed; backdrop-filter: blur(15px); border: 1px solid #fff; padding: 16px 19px; border-radius: 14px; box-shadow: 0 10px 25px #4730550a; transition: transform .8s; }
 .story-callout > span { color: var(--scene-accent); font-size: 32px; }
 .story-callout p { margin: 0; font-size: .75rem; line-height: 1.8; color: #92869c; }
@@ -81,12 +81,3 @@
   .motion-scene, .morph-phone, .story-visual, .story-orb, .story-ring, .story-chapter { transition: none; animation: none !important; }
   .morph-phone { transform: none !important; }
 }
-
-.presentation-archive h2 {font-size:clamp(26px,3vw,38px);margin-bottom:16px;}
-.presentation-archive>p:not(.eyebrow){color:#777080;max-width:720px;line-height:1.8;margin-bottom:24px;}
-.presentation-archive summary{cursor:pointer;padding:22px;border:1px solid #e9e3f5;border-radius:16px;color:#685597;}
-.archive-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px;padding-top:28px;}
-.archive-grid figure{margin:0;text-align:center;}
-.archive-grid video{width:100%;max-height:500px;background:#f7f5fc;border-radius:24px;}
-.archive-grid figcaption{padding-top:12px;font-size:13px;color:#777080;}
-@media(max-width:600px){.archive-grid{grid-template-columns:1fr;}.archive-grid video{max-width:260px;}}
