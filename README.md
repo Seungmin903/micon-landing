@@ -1,5 +1,7 @@
 # MICON landing
 
+[MICON 포트폴리오 사이트 바로가기](https://seungmin903.github.io/micon-landing/)
+
 MICON Android 앱의 실제 시연과 구현 과정을 소개하는 한국어 기술 포트폴리오입니다. 문제 정의, 시스템 구조, 알고리즘 선택, 상태 관리, 검증 근거와 팀 역할을 함께 담았습니다. 별도의 빌드와 패키지 설치 없이 동작하는 HTML, CSS, JavaScript로 구성했습니다.
 
 ## 로컬 실행
