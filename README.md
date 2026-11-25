@@ -34,24 +34,16 @@ python -m http.server 4174 --bind 127.0.0.1
 
 ## 화면과 내용의 근거
 
-맞춤곡 추천 화면은 현재 Android의 `RecommendDeckScreen.kt`, `CdPlayer.kt`, `CompactDisc.kt`와 디자인 토큰을 참고한 SVG 재현입니다(`assets/screens/recommend-deck.svg`). 최신 앱 캡처가 아니며 곡은 예시입니다. 나머지 제품 화면은 MICON Android 저장소의 실제 개발 캡처 원본입니다. 기능 설명은 해당 저장소의 Kotlin·Jetpack Compose 코드를 대조했습니다.
+첫 화면, 서비스 소개, 앱 둘러보기의 다섯 UI는 현재 Android 코드를 대조해 만든 SVG 재현입니다. 실제 앱 실행 캡처가 아니며 곡·분석값·가사 안내와 움직임은 설명용 예시입니다. 과거 스켈레톤 캡처는 현재 UI 영역에서 사용하지 않습니다.
 
-- 소스 기준 커밋: `8ca428e2c268442116f50a33c8a3d11bbf7f9b12`
-- 캡처 원본: `frontend/android/docs/screenshots/`
-- 로고 원본: `frontend/android/app/src/main/res/drawable-nodpi/micon_logo.png`
-- 분석: `ui/report/ReportScreens.kt`
-- 추천: `ui/recommend/RecommendScreens.kt`, `RecommendDeckScreen.kt`
-- 곡 적합도: `ui/recommend/RecommendScreens.kt`
-- 연습: `ui/practice/PracticeScreen.kt`
-- 찜·세트리스트: `ui/favorites/FavoritesScreens.kt`
-
-**캡처는 과거 스켈레톤/개발 버전입니다.** 원본 저장소의 `frontend/android/docs/README.md`에 현재 UI 기준 여부를 확인하기 전까지 참고 자료로 사용하라고 명시되어 있습니다. 따라서 페이지에서 개발 화면·예시 데이터·현재 버전과의 차이를 안내합니다. 최신 앱을 실행해 새로 촬영한 화면으로 오인하지 않도록 유지해야 합니다.
-
-화면 갱신 시 `assets/screens/`의 이미지와 `app.js`의 화면 메타데이터를 함께 확인하세요. 스토어 링크나 소개 영상은 전달받은 실제 URL이 없으므로 임의로 생성하지 않았습니다.
+- 소스 기준: 제공된 로컬 Android 체크아웃 `8ca428e2c268442116f50a33c8a3d11bbf7f9b12`
+- 생성: `python scripts/build_service_ui.py`
+- 화면별 근거와 재현 범위: [SERVICE_UI_SOURCES.md](docs/SERVICE_UI_SOURCES.md)
+- 로고: 본선 PPT의 `image6.png`(글자), `image7.png`(마이크), `image13.png`(합성 로고)
 
 ### 본선 발표 자료의 서비스 시연
 
-서비스 소개 영역은 제공된 `MICON PPT 본선용.zip`의 발표 자료에 포함된 실제 GIF를 사용합니다. 큰 GIF 원본을 그대로 내려받지 않고, 원본의 동작을 유지한 H.264 MP4로 변환했습니다. 음성 수집이나 실시간 분석 기능을 웹에서 실행하는 것이 아니라 앱 사용 장면을 보여줍니다.
+`demo.html` 하단 ‘발표 당시의 실제 앱 시연’에서 PPT 원본 GIF를 변환한 영상을 따로 제공합니다. 현재 UI와 다른 발표 당시 버전임을 표시하며 자동 재생하지 않습니다.
 
 | 장면 | 원본 슬라이드와 미디어 | 웹 자산 |
 | --- | --- | --- |
@@ -59,7 +51,7 @@ python -m http.server 4174 --bind 127.0.0.1
 | 추천 키·적합도 | 15번, `ppt/media/image39.gif` | `assets/motion/recommended-key.mp4` |
 | 실시간 연습 | 18번, `ppt/media/image40.gif` | `assets/motion/live-practice.mp4` |
 
-세 영상은 소리가 없습니다. 원본 GIF의 상단 96px(Android 상태표시줄)을 잘라낸 후 인코딩했으며 포스터에도 같은 크롭을 적용했습니다. 포스터는 각 영상의 첫 프레임입니다. `motion.css`와 `motion.js`가 스크롤에 따른 장면 전환과 재생을 관리합니다. 화면에 보이는 활성 영상만 재생하고, 화면 밖으로 나가거나 브라우저 탭이 숨겨지면 멈춥니다. 모바일에서는 버튼으로 장면을 선택합니다. 사용자가 일시정지하거나 OS의 동작 줄이기를 켜면 자동 재생을 멈추고 정지 화면을 표시합니다. 전환은 동일한 프레임 안에서 화면 페이드와 크기·기울기·모서리·배경 형태의 변화로 구현했습니다.
+세 영상은 소리가 없으며 Android 상태표시줄 96px을 잘라냈습니다. 상단의 현재 UI 소개는 `motion.js`가 장면을 전환하고 SVG의 설명용 움직임을 재생합니다. 화면 밖·숨겨진 탭에서는 정지 버전으로 바꾸며, 일시정지와 OS 동작 줄이기를 지원합니다.
 
 ## 기술 포트폴리오의 근거
 
