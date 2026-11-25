@@ -63,7 +63,7 @@ python -m http.server 4174 --bind 127.0.0.1
 
 ## 기술 포트폴리오의 근거
 
-`portfolio.css`와 `portfolio.js`가 아키텍처 흐름 선택과 추천 키 설명 예시를 구현합니다.
+`architecture.js`는 기능별 구성요소의 입력·처리·출력과 코드 근거를 전환합니다. `portfolio.css`와 `portfolio.js`는 해당 배치와 추천 키 설명 예시를 구현합니다. 음색 분석·음역 측정에서는 WAV 직접 전달과 AI 임시 보관을, 연습에서는 기기 내 라이브 판정과 미디어 제공 경로를 구분합니다.
 
 - 음색 모델 계약: `ai/recommend-server/timbre_recommender/contracts.py` (ECAPA 192차원, Singer-BYOL 1,000차원)
 - 구간 추출: `embedding.py` (4초 창, 2초 hop)

@@ -12,10 +12,11 @@
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="styles.css">
   <link rel="stylesheet" href="motion.css">
-  <link rel="stylesheet" href="portfolio.css">
+  <link rel="stylesheet" href="portfolio.css?v=architecture-2">
   <link rel="stylesheet" href="pages.css">
   <script src="app.js?v=explorer-code-1" defer></script>
-<script src="portfolio.js" defer></script>
+<script src="architecture.js?v=roles-1" defer></script>
+<script src="portfolio.js?v=architecture-2" defer></script>
 </head>
 <body data-page="technology" class="inner-page">
 <a class="skip-link" href="#main">본문으로 건너뛰기</a><header class="header">
@@ -29,6 +30,7 @@
       <div class="container">
         <div class="architecture-intro"><div><p class="eyebrow">SYSTEM ARCHITECTURE</p><h2>실시간 처리는 기기에서,<br> <span>무거운 분석은 서버에서.</span></h2></div><p>Android는 녹음·재생과 즉각적인 피드백을 담당합니다. Spring Boot는 데이터와 분석 작업의 흐름을 관리하고, FastAPI는 음성 모델 추론과 추천 계산을 수행합니다.</p></div>
         <div class="architecture-switch" role="group" aria-label="데이터 흐름 선택"><button data-flow="timbre" aria-pressed="true">음색 분석·추천</button><button data-flow="range" aria-pressed="false">음역 측정</button><button data-flow="practice" aria-pressed="false">노래 연습</button></div>
+        <p class="architecture-hint">기능을 고르면 각 구성요소의 역할도 바뀝니다. 카드의 ‘처리 상세 보기’에서 입력·처리·출력을 확인하세요.</p><ol class="flow-steps" aria-label="선택한 기능의 처리 순서"></ol>
         <div class="system-map" data-flow="timbre" aria-label="Android, Spring Boot, FastAPI, MySQL, S3의 시스템 구조">
           <article class="system-node node-android" data-node="android"><span class="node-label">CLIENT</span><h3>Android</h3><p>Kotlin · Jetpack Compose</p><ul><li>AudioRecord · YIN 음정 추적</li><li>Media3 반주 재생</li><li>측정·연습 화면 상태 관리</li></ul></article>
           <div class="system-connector" data-edge="api"><span>HTTPS API</span><i aria-hidden="true"></i></div>
@@ -40,7 +42,7 @@
           <div class="system-storage-link" aria-hidden="true">Spring Boot가 데이터 저장과 미디어 접근을 관리</div>
         </div>
         <div class="flow-explanation" aria-live="polite"><span>음색 분석·추천</span><p>Android에서 녹음을 제출하면 BE가 AI 작업을 접수합니다. AI의 컴포넌트별 결과를 콜백으로 받아 프로필과 추천 결과에 연결합니다.</p></div>
-        <div class="stack-ledger"><div><span>APP</span><p>Kotlin / Compose / Coroutines / Retrofit / Media3</p></div><div><span>SERVER & AI</span><p>Spring Boot / JPA / FastAPI / PyTorch / SpeechBrain</p></div><div><span>DATA & DELIVERY</span><p>MySQL / Flyway / S3 / Docker / Nginx / Jenkins</p></div></div>
+        <section class="component-detail" id="component-detail" aria-live="polite" aria-atomic="true" aria-label="선택한 구성요소의 처리 상세"><div class="component-heading"><p class="component-context">음색 분석·추천 / Android</p><h3>보컬 녹음과 결과 화면</h3></div><div class="component-columns"><div><span>입력</span><p data-detail="input"></p></div><div><span>처리</span><ol></ol></div><div><span>출력</span><p data-detail="output"></p></div></div><details><summary>처리 역할의 코드 근거</summary><div class="component-evidence"></div></details></section><div class="stack-ledger"><div><span>APP</span><p>Kotlin / Compose / Coroutines / Retrofit / Media3</p></div><div><span>SERVER & AI</span><p>Spring Boot / JPA / FastAPI / PyTorch / SpeechBrain</p></div><div><span>DATA & DELIVERY</span><p>MySQL / Flyway / S3 / Docker / Nginx / Jenkins</p></div></div>
         <p class="portfolio-source">구현 근거: Android README · ai/recommend-server/README.md · backend/build.gradle · 운영 배포 문서</p>
       </div>
     </section><section class="engineering-section section container" id="engineering">
