@@ -1,17 +1,22 @@
 .home-page .hero h1.brand-title { position:relative; display:block; isolation:isolate; width:min(720px,80%); margin:35px auto 32px; line-height:0; overflow:visible; }
 .brand-wordmark { position:relative; width:100%; height:auto; z-index:1; opacity:0; }
 .brand-title .brand-ppt-mic { position:absolute; left:26.42%; top:2.2%; width:9.2%; height:auto; z-index:2; }
-.brand-title .brand-aura { position:absolute; width:52%; aspect-ratio:1; left:5%; top:50%; transform:translateY(-50%); border-radius:50%; background:radial-gradient(circle,#b4a1ff45,transparent 65%); opacity:0; z-index:-1; pointer-events:none; }
+.brand-title .brand-aura { position:absolute; width:52%; aspect-ratio:1; left:5%; top:50%; transform:translateY(-50%); border-radius:50%; background:radial-gradient(circle,#a88aff80,transparent 65%); opacity:0; z-index:-1; pointer-events:none; }
 .brand-title.is-lit .brand-wordmark { animation:ppt-letters .4s ease-out 1.05s both; }
-.brand-title.is-lit .brand-ppt-mic { animation:ppt-microphone 1s ease-in-out .45s both; }
-.brand-title.is-lit .brand-aura { animation:ppt-aura .7s ease-out 1.35s both; }
+.brand-title.is-lit .brand-ppt-mic { animation:ppt-microphone 1s ease-in-out .45s both, ppt-mic-glow 1.3s ease-out 1.5s both; }
+.brand-title.is-lit .brand-aura { animation:ppt-aura 1.3s ease-out 1.5s both; }
 /* PPT slide 1: microphone shrinks to 79.365%, moves left, letters fade in. */
 @keyframes ppt-microphone { 0% { left:42.17%; top:-10.1%; width:11.6%; } 28%,37% { left:43.37%; top:2.2%; width:9.2%; } 100% { left:26.42%; top:2.2%; width:9.2%; } }
 @keyframes ppt-letters { from { opacity:0; } to { opacity:1; } }
-@keyframes ppt-aura { from { opacity:0; } to { opacity:.55; } }
+@keyframes ppt-mic-glow {
+  0% { filter:brightness(1) drop-shadow(0 0 0 #a88aff00); }
+  38% { filter:brightness(1.6) drop-shadow(0 0 8px #d4bdff) drop-shadow(0 0 24px #9a74ff); }
+  100% { filter:brightness(1.18) drop-shadow(0 0 5px #cab2ff) drop-shadow(0 0 13px #a581f7); }
+}
+@keyframes ppt-aura { 0% { opacity:0; transform:translateY(-50%) scale(.65); } 40% { opacity:1; transform:translateY(-50%) scale(1.12); } 100% { opacity:.55; transform:translateY(-50%) scale(1); } }
 .hero .hero-tagline { font-size:clamp(18px,2vw,25px); font-weight:650; letter-spacing:-.045em; color:#686076; margin-bottom:13px; line-height:1.6; }
 .brand-replay { display:inline-flex; align-items:center; gap:9px; padding:5px 12px; margin-bottom:24px; background:transparent; border-radius:15px; color:#9e8bc1; font-size:11px; font-weight:600; letter-spacing:.12em; transition:background .2s,color .2s; }
 .brand-replay:hover { background:#eee8fb; color:#7353b7; }
 .brand-replay span { font-size:15px; }
 @media(max-width:600px) { .home-page .hero h1.brand-title { width:94%; margin-top:33px; margin-bottom:26px; } .hero .hero-tagline { font-size:17px; } .brand-replay { margin-bottom:17px; } }
-@media(prefers-reduced-motion:reduce) { .brand-title.is-lit .brand-wordmark,.brand-title.is-lit .brand-ppt-mic,.brand-title.is-lit .brand-aura { animation:none; } .brand-title.is-lit .brand-wordmark { opacity:1; } .brand-title.is-lit .brand-aura { opacity:.55; } }
+@media(prefers-reduced-motion:reduce) { .brand-title.is-lit .brand-wordmark,.brand-title.is-lit .brand-ppt-mic,.brand-title.is-lit .brand-aura { animation:none; } .brand-title.is-lit .brand-wordmark { opacity:1; } .brand-title.is-lit .brand-ppt-mic { filter:brightness(1.18) drop-shadow(0 0 8px #a581f7); } .brand-title.is-lit .brand-aura { opacity:.55; } }
