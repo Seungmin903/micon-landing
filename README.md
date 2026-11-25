@@ -34,7 +34,7 @@ python -m http.server 4174 --bind 127.0.0.1
 
 ## 화면과 내용의 근거
 
-맞춤곡 추천 화면은 현재 Android의 `RecommendDeckScreen.kt`, `CdPlayer.kt`, `CompactDisc.kt`와 디자인 토큰을 참고한 SVG 재현입니다(`assets/screens/recommend-deck.svg`). 최신 앱 캡처가 아니며 곡은 예시입니다. 나머지 제품 화면은 MICON Android 저장소의 실제 개발 캡처 원본입니다. 기능 설명은 해당 저장소의 Kotlin·Jetpack Compose 코드를 대조했습니다.
+`demo.html#screens`의 앱 둘러보기 다섯 화면은 현재 Android 코드를 바탕으로 재현한 SVG입니다. 실제 앱 실행 캡처가 아니며 예시 데이터입니다. 첫 화면의 기존 개발 캡처와 상단 PPT 시연 영상은 그대로 유지합니다. 화면별 범위는 [서비스 UI 근거](docs/SERVICE_UI_SOURCES.md)를 참고하세요.
 
 - 소스 기준 커밋: `8ca428e2c268442116f50a33c8a3d11bbf7f9b12`
 - 캡처 원본: `frontend/android/docs/screenshots/`
