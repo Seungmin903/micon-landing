@@ -1,48 +1,17 @@
-.home-page .hero h1.brand-title {
-  position: relative;
-  display: block;
-  isolation: isolate;
-  width: min(720px, 80%);
-  margin: 35px auto 32px;
-  line-height: 0;
-  overflow: visible;
-}
-.brand-wordmark { position: relative; width: 100%; height: auto; z-index: 1; }
-.brand-title .brand-mic-light { position: absolute; inset: 0; z-index: 2; opacity: 0; color: inherit; }
-.brand-mic-light img { width: 100%; height: auto; clip-path: inset(0 64% 0 26.4%); filter: brightness(1.45) saturate(.85); }
-.brand-title .brand-mic-switch { position: absolute; left: 30.65%; top: 45.5%; width: .66%; height: 8.5%; border-radius: 10px; background: #ece7ff; z-index: 3; opacity: 0; }
-.brand-title .brand-aura { position: absolute; width: 52%; aspect-ratio: 1; left: 5%; top: 50%; transform: translateY(-50%); border-radius: 50%; background: radial-gradient(circle, #b4a1ff70 0%, #bba7fa28 40%, transparent 70%); filter: blur(17px); opacity: 0; z-index: -1; pointer-events: none; }
-.brand-title.is-lit .brand-mic-light { animation: mic-power-on 1.7s ease-out .45s both; }
-.brand-title.is-lit .brand-mic-switch { animation: mic-switch-on 1.7s ease-out .45s both; }
-.brand-title.is-lit .brand-aura { animation: mic-aura-on 1.9s ease-out .45s both; }
-.hero .hero-tagline { font-size: clamp(18px, 2vw, 25px); font-weight: 650; letter-spacing: -.045em; color: #686076; margin-bottom: 13px; line-height: 1.6; }
-.brand-replay { display: inline-flex; align-items: center; gap: 9px; padding: 5px 12px; margin-bottom: 24px; background: transparent; border-radius: 15px; color: #9e8bc1; font-size: 11px; font-weight: 600; letter-spacing: .12em; transition: background .2s, color .2s; }
-.brand-replay:hover { background: #eee8fb; color: #7353b7; }
-.brand-replay span { font-size: 15px; }
-.brand-title:hover .brand-mic-light { filter: drop-shadow(0 0 12px #ad95ff); }
-@keyframes mic-power-on {
-  0%, 10% { opacity: 0; filter: drop-shadow(0 0 0 #8b69ff00); }
-  20% { opacity: .7; }
-  28% { opacity: .2; }
-  42% { opacity: 1; filter: drop-shadow(0 0 20px #b9a1ff) drop-shadow(0 0 5px #916bff); }
-  100% { opacity: .8; filter: drop-shadow(0 0 10px #b09af7) drop-shadow(0 0 3px #9c7bf5); }
-}
-@keyframes mic-switch-on {
-  0%, 14% { opacity: 0; box-shadow: none; }
-  22% { opacity: .8; }
-  29% { opacity: .25; }
-  45% { opacity: 1; box-shadow: 0 0 10px 3px #e8ddff, 0 0 28px 8px #9e7aff; }
-  100% { opacity: .95; box-shadow: 0 0 5px 2px #e8ddff, 0 0 16px 5px #b092ff; }
-}
-@keyframes mic-aura-on { 0%, 15% { opacity: 0; transform: translateY(-50%) scale(.7); } 45% { opacity: 1; transform: translateY(-50%) scale(1.1); } 100% { opacity: .7; transform: translateY(-50%) scale(1); } }
-@media(max-width:600px) {
-  .home-page .hero h1.brand-title { width: 94%; margin-top: 33px; margin-bottom: 26px; }
-  .hero .hero-tagline { font-size: 17px; }
-  .brand-replay { margin-bottom: 17px; }
-  .brand-title .brand-aura { filter: blur(10px); }
-}
-@media(prefers-reduced-motion:reduce) {
-  .brand-title.is-lit .brand-mic-light { animation: none; opacity: .8; filter: drop-shadow(0 0 8px #b09af7); }
-  .brand-title.is-lit .brand-mic-switch { animation: none; opacity: 1; box-shadow: 0 0 7px 2px #c8b5ff; }
-  .brand-title.is-lit .brand-aura { animation: none; opacity: .7; }
-}
+.home-page .hero h1.brand-title { position:relative; display:block; isolation:isolate; width:min(720px,80%); margin:35px auto 32px; line-height:0; overflow:visible; }
+.brand-wordmark { position:relative; width:100%; height:auto; z-index:1; opacity:0; }
+.brand-title .brand-ppt-mic { position:absolute; left:26.42%; top:2.2%; width:9.2%; height:auto; z-index:2; }
+.brand-title .brand-aura { position:absolute; width:52%; aspect-ratio:1; left:5%; top:50%; transform:translateY(-50%); border-radius:50%; background:radial-gradient(circle,#b4a1ff45,transparent 65%); opacity:0; z-index:-1; pointer-events:none; }
+.brand-title.is-lit .brand-wordmark { animation:ppt-letters .4s ease-out 1.05s both; }
+.brand-title.is-lit .brand-ppt-mic { animation:ppt-microphone 1s ease-in-out .45s both; }
+.brand-title.is-lit .brand-aura { animation:ppt-aura .7s ease-out 1.35s both; }
+/* PPT slide 1: microphone shrinks to 79.365%, moves left, letters fade in. */
+@keyframes ppt-microphone { 0% { left:42.17%; top:-10.1%; width:11.6%; } 28%,37% { left:43.37%; top:2.2%; width:9.2%; } 100% { left:26.42%; top:2.2%; width:9.2%; } }
+@keyframes ppt-letters { from { opacity:0; } to { opacity:1; } }
+@keyframes ppt-aura { from { opacity:0; } to { opacity:.55; } }
+.hero .hero-tagline { font-size:clamp(18px,2vw,25px); font-weight:650; letter-spacing:-.045em; color:#686076; margin-bottom:13px; line-height:1.6; }
+.brand-replay { display:inline-flex; align-items:center; gap:9px; padding:5px 12px; margin-bottom:24px; background:transparent; border-radius:15px; color:#9e8bc1; font-size:11px; font-weight:600; letter-spacing:.12em; transition:background .2s,color .2s; }
+.brand-replay:hover { background:#eee8fb; color:#7353b7; }
+.brand-replay span { font-size:15px; }
+@media(max-width:600px) { .home-page .hero h1.brand-title { width:94%; margin-top:33px; margin-bottom:26px; } .hero .hero-tagline { font-size:17px; } .brand-replay { margin-bottom:17px; } }
+@media(prefers-reduced-motion:reduce) { .brand-title.is-lit .brand-wordmark,.brand-title.is-lit .brand-ppt-mic,.brand-title.is-lit .brand-aura { animation:none; } .brand-title.is-lit .brand-wordmark { opacity:1; } .brand-title.is-lit .brand-aura { opacity:.55; } }

@@ -34,7 +34,7 @@ python -m http.server 4174 --bind 127.0.0.1
 
 ## 화면과 내용의 근거
 
-제품 화면은 임의로 다시 그린 목업이 아니라 MICON Android 저장소의 실제 개발 캡처 원본입니다. 기능 설명은 해당 저장소의 Kotlin·Jetpack Compose 코드를 대조했습니다.
+맞춤곡 추천 화면은 현재 Android의 `RecommendDeckScreen.kt`, `CdPlayer.kt`, `CompactDisc.kt`와 디자인 토큰을 참고한 SVG 재현입니다(`assets/screens/recommend-deck.svg`). 최신 앱 캡처가 아니며 곡은 예시입니다. 나머지 제품 화면은 MICON Android 저장소의 실제 개발 캡처 원본입니다. 기능 설명은 해당 저장소의 Kotlin·Jetpack Compose 코드를 대조했습니다.
 
 - 소스 기준 커밋: `8ca428e2c268442116f50a33c8a3d11bbf7f9b12`
 - 캡처 원본: `frontend/android/docs/screenshots/`
@@ -88,3 +88,5 @@ python -m http.server 4174 --bind 127.0.0.1
 ## 배포
 
 정적 파일을 그대로 호스팅하면 됩니다. 상대 경로를 사용하므로 GitHub Pages의 `/micon-landing/` 하위 경로에서도 동작합니다. GitHub Pages를 사용할 경우 저장소 Settings → Pages에서 `main` 브랜치의 `/(root)`를 선택합니다.
+
+홈 타이틀과 공통 로고는 본선 PPT 원본 이미지입니다. 첫 장의 마이크 축소·왼쪽 이동·문자 페이드인 순서를 CSS로 옮겼습니다.
