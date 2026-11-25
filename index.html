@@ -14,7 +14,9 @@
   <link rel="stylesheet" href="motion.css">
   <link rel="stylesheet" href="portfolio.css">
   <link rel="stylesheet" href="pages.css">
+  <link rel="stylesheet" href="hero-title.css">
   <script src="app.js?v=pages-1" defer></script>
+  <script src="hero-title.js" defer></script>
 
 </head>
 <body data-page="home" class="home-page">
@@ -29,7 +31,9 @@
       <div class="hero-glow" aria-hidden="true"></div>
       <div class="hero-copy container">
         <p class="eyebrow"><span class="mini-wave" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></span> TEAM B110 · AUDIO INTELLIGENCE</p>
-        <h1>목소리를 데이터로,<br> <span>데이터로 찾는 나의 노래.</span></h1>
+        <h1 class="brand-title is-lit"><span class="brand-aura" aria-hidden="true"></span><img class="brand-wordmark" src="assets/logo.png" alt="MICON" width="1774" height="454" fetchpriority="high"><span class="brand-mic-light" aria-hidden="true"><img src="assets/logo.png" alt="" width="1774" height="454"></span><span class="brand-mic-switch" aria-hidden="true"></span></h1>
+        <p class="hero-tagline">목소리를 데이터로, 데이터로 찾는 나의 노래.</p>
+        <button class="brand-replay" type="button" aria-label="MICON 마이크 로고 점등 효과 다시 보기">MIC ON <span aria-hidden="true">↻</span></button>
         <p class="hero-description">음역과 음색을 분석해 부르기 좋은 곡과 키를 찾고,<br> 실시간 음정 피드백으로 연습까지 연결한 Android 서비스입니다.</p>
         <div class="hero-actions"><a class="button primary" href="demo.html#features">실제 앱 시연 보기</a><a class="button secondary" href="technology.html#engineering">어떻게 구현했는지 보기</a></div>
         <p class="hero-footnote">Kotlin · Jetpack Compose · Spring Boot · FastAPI · PyTorch</p>
